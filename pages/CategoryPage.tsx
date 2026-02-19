@@ -18,6 +18,33 @@ const CategoryPage: React.FC = () => {
     ? Array.from(new Set(category.projects.flatMap(p => [p.thumbnail, ...(p.gallery || [])])))
     : [];
 
+  const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
+
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % allImages.length);
+    }
+  };
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + allImages.length) % allImages.length);
+    }
+  };
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'Escape') setSelectedIndex(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex]);
+
   return (
     <div className="px-6 py-12 max-w-7xl mx-auto">
       <Link to="/" className="inline-flex items-center text-black/40 hover:text-black transition mb-12 uppercase tracking-widest text-[10px] font-bold">
@@ -49,8 +76,9 @@ const CategoryPage: React.FC = () => {
           {allImages.map((image, index) => (
             <div
               key={index}
-              className="aspect-video bg-neutral-100 overflow-hidden shadow-sm cursor-pointer group"
-              onClick={() => setSelectedImage(image)}
+              className="bg-neutral-100 overflow-hidden shadow-sm cursor-pointer group"
+              style={{ aspectRatio: category.galleryAspectRatio || '16/9' }}
+              onClick={() => setSelectedIndex(index)}
             >
               <img
                 src={getOptimizedImage(image, 800)}
@@ -96,22 +124,40 @@ const CategoryPage: React.FC = () => {
       )}
 
       {/* Lightbox Overlay */}
-      {selectedImage && (
+      {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+          onClick={() => setSelectedIndex(null)}
         >
           <button
-            className="absolute top-6 right-6 text-white/50 hover:text-white transition"
-            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition z-[60]"
+            onClick={() => setSelectedIndex(null)}
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
-          <img
-            src={getOptimizedImage(selectedImage, 2000, 90)}
-            alt="Gallery view"
-            className="max-w-[69vw] max-h-[69vh] object-contain shadow-2xl"
-          />
+
+          {/* Navigation Arrows */}
+          <button
+            className="absolute left-6 text-white/30 hover:text-white transition z-[60] p-4"
+            onClick={handlePrev}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          </button>
+
+          <button
+            className="absolute right-6 text-white/30 hover:text-white transition z-[60] p-4"
+            onClick={handleNext}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          </button>
+
+          <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
+            <img
+              src={getOptimizedImage(allImages[selectedIndex], 2000, 90)}
+              alt="Gallery view"
+              className="max-w-[75vw] max-h-[75vh] object-contain shadow-2xl pointer-events-auto"
+            />
+          </div>
         </div>
       )}
     </div>

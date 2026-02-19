@@ -3,61 +3,6 @@ import { Category } from './types';
 
 export const CATEGORIES: Category[] = [
   {
-    id: 'doc',
-    name: 'DOCUMENTARY',
-    slug: 'documentary',
-    description: '',
-    featuredImage: 'horsered.jpg',
-    projects: [
-      {
-        id: 'earthrise',
-        title: 'EARTHRISE X OXFAM',
-        description: '',
-        videoUrl: 'https://vimeo.com/1133489984',
-        thumbnail: 'buffalo.JPG',
-        category: 'DOCUMENTARY',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
-        gallery: [
-          'lcportrait.jpg',
-          'buffalo.JPG',
-          'lctruck.jpg'
-        ]
-      },
-      {
-        id: 'all-you-need',
-        title: 'ALL WE NEED IS ANOTHER CHANCE',
-        description: '',
-        videoUrl: 'https://vimeo.com/686764376/4a6dcb9177?share=copy&fl=sv&fe=ci',
-        thumbnail: 'tle.JPG',
-        category: 'DOCUMENTARY',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
-        gallery: [
-          'jail.jpg',
-          'tle.JPG',
-          'tv.jpg'
-        ]
-      },
-      {
-        id: 'blackout',
-        title: 'BLACKOUT',
-        description: '',
-        videoUrl: 'https://www.youtube.com/watch?v=TNvDtuXAJdk',
-        thumbnail: 'tents.jpg',
-        category: 'DOCUMENTARY',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
-        gallery: [
-          'tents.jpg'
-        ]
-      }
-    ]
-  },
-  {
     id: 'series',
     name: 'SERIES',
     slug: 'series',
@@ -68,7 +13,7 @@ export const CATEGORIES: Category[] = [
         id: 'women-of-the-earth',
         title: 'WOMEN OF THE EARTH',
         description: '',
-        videoUrl: 'https://vimeo.com/1013212196/66ecf11a6f',
+        videoUrl: 'https://vimeo.com/1165723713/921b31ee6f?fl=tl&fe=ec',
         thumbnail: 'chiamountains.jpg',
         category: 'SERIES',
         director: 'TBD',
@@ -144,6 +89,61 @@ export const CATEGORIES: Category[] = [
     ]
   },
   {
+    id: 'doc',
+    name: 'DOCUMENTARY',
+    slug: 'documentary',
+    description: '',
+    featuredImage: 'horsered.jpg',
+    projects: [
+      {
+        id: 'earthrise',
+        title: 'EARTHRISE X OXFAM',
+        description: '',
+        videoUrl: 'https://vimeo.com/1133489984',
+        thumbnail: 'buffalo.JPG',
+        category: 'DOCUMENTARY',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          'lcportrait.jpg',
+          'buffalo.JPG',
+          'lctruck.jpg'
+        ]
+      },
+      {
+        id: 'all-you-need',
+        title: 'ALL WE NEED IS ANOTHER CHANCE',
+        description: '',
+        videoUrl: 'https://vimeo.com/686764376/4a6dcb9177?share=copy&fl=sv&fe=ci',
+        thumbnail: 'tle.JPG',
+        category: 'DOCUMENTARY',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          'jail.jpg',
+          'tle.JPG',
+          'tv.jpg'
+        ]
+      },
+      {
+        id: 'blackout',
+        title: 'BLACKOUT',
+        description: '',
+        videoUrl: 'https://www.youtube.com/watch?v=TNvDtuXAJdk',
+        thumbnail: 'tents.jpg',
+        category: 'DOCUMENTARY',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          'tents.jpg'
+        ]
+      }
+    ]
+  },
+  {
     id: 'films',
     name: 'FILMS',
     slug: 'films',
@@ -205,15 +205,15 @@ export const CATEGORIES: Category[] = [
         title: 'SUBPAR',
         description: '',
         videoUrl: 'https://vimeo.com/143180353/df459ec313?fl=pl&fe=sh',
-        thumbnail: 'Family.jpg',
+        thumbnail: 'trains.jpg',
         category: 'FILMS',
         director: 'TBD',
         cinematographer: 'MATTHEW FIGLER',
         format: 'TBD',
         gallery: [
           'Family.jpg',
-          'trains.jpg',
-          'dad.jpg'
+          'dad.jpg',
+          'mom.jpg'
         ],
         aspectRatio: '16/9',
         galleryAspectRatio: '2.39/1'
@@ -253,8 +253,8 @@ export const CATEGORIES: Category[] = [
         format: 'TBD',
         gallery: [
           'Mirror.jpg',
-          'tubes.jpg',
-          'Cab.jpg'
+          'Cab.jpg',
+          'tubes.jpg'
         ]
       },
       {
@@ -328,7 +328,7 @@ export const CATEGORIES: Category[] = [
         thumbnail: 'T+Day.jpg',
         category: 'INTERVIEW LOOKS',
         gallery: [
-          'truck.jpg', '4.png', '6.png', '8.png', 'twoperson.jpg', 'abbycu.jpg:h-flip', '10.png', 'Nicolelens.jpg'
+          'truck.jpg', '4.png', 'Indust.jpg', '8.png', 'abbycu.jpg:h-flip', 'twoperson.jpg', '10.png', 'Nicolelens.jpg'
         ]
       }
     ]
@@ -417,22 +417,26 @@ export const CATEGORIES: Category[] = [
     name: '2ND UNIT & OPERATOR WORK',
     slug: 'contributions',
     description: '',
-    comingSoon: true,
     featuredImage: 'Lizzo1.png',
+    isGalleryView: true,
+    customProjectCountText: 'VARIOUS PROJECTS',
+    galleryAspectRatio: '2/3',
     projects: [
       {
-        id: 'betty',
-        title: 'BETTY',
+        id: 'highlights',
+        title: 'HIGHLIGHTS',
         description: '',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        thumbnail: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=1280&h=720&auto=format&fit=crop',
-        category: 'CONTRIBUTIONS',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
+        videoUrl: '',
+        thumbnail: 'bettylg.jpg',
+        category: '2ND UNIT & OPERATOR WORK',
         gallery: [
-          'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?q=80&w=1280&h=720&auto=format&fit=crop'
-        ]
+          'bettylg.jpg',
+          'bwb.jpg',
+          'hh.jpg',
+          'Lizzotour.jpg:cm-pad_resize,bg-F5F5F5,ar-2-3'
+        ],
+        aspectRatio: '16/9',
+        galleryAspectRatio: '2/3'
       }
     ]
   },
@@ -441,8 +445,25 @@ export const CATEGORIES: Category[] = [
     name: 'EXPERIMENTS',
     slug: 'experiments',
     description: '',
-    featuredImage: 'cover.jpg',
+    featuredImage: 'Wide.jpg',
     projects: [
+      {
+        id: 'film-test',
+        title: 'WIDE TO SCOPE 35MM TEST',
+        description: '',
+        videoUrl: 'https://vimeo.com/1163780871?share=copy&fl=sv&fe=ci',
+        thumbnail: 'Wide2x.jpg',
+        category: 'EXPERIMENTS',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          'Wide2x.jpg',
+          'Norm.jpg'
+        ],
+        aspectRatio: '16/9',
+        galleryAspectRatio: '4/3'
+      },
       {
         id: 'red-scale',
         title: 'RED SCALE',
@@ -455,22 +476,6 @@ export const CATEGORIES: Category[] = [
         format: 'TBD',
         gallery: [
           'Wide.jpg'
-        ],
-        aspectRatio: '16/9',
-        galleryAspectRatio: '4/3'
-      },
-      {
-        id: 'push-process',
-        title: 'PUSH PROCESS',
-        description: '',
-        videoUrl: 'https://vimeo.com/284443250?share=copy&fl=sv&fe=ci',
-        thumbnail: 'Push.jpg',
-        category: 'EXPERIMENTS',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
-        gallery: [
-          'Push.jpg'
         ],
         aspectRatio: '16/9',
         galleryAspectRatio: '4/3'
@@ -492,6 +497,38 @@ export const CATEGORIES: Category[] = [
         ],
         aspectRatio: '16/9',
         galleryAspectRatio: '2.39/1'
+      },
+      {
+        id: 'lens-test',
+        title: 'LENS TEST',
+        description: '',
+        videoUrl: 'https://vimeo.com/1164111497?share=copy&fl=sv&fe=ci',
+        thumbnail: 'Laowa.gif',
+        category: 'EXPERIMENTS',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          '12flare.jpg'
+        ],
+        aspectRatio: '16/9',
+        galleryAspectRatio: '4/3'
+      },
+      {
+        id: 'push-process',
+        title: 'PUSH PROCESS',
+        description: '',
+        videoUrl: 'https://vimeo.com/284443250?share=copy&fl=sv&fe=ci',
+        thumbnail: 'Push.jpg',
+        category: 'EXPERIMENTS',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          'Push.jpg'
+        ],
+        aspectRatio: '16/9',
+        galleryAspectRatio: '4/3'
       }
     ]
   }

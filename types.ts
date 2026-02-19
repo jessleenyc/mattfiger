@@ -27,4 +27,5 @@ export interface Category {
   comingSoon?: boolean;
   isGalleryView?: boolean;
   customProjectCountText?: string;
+  galleryAspectRatio?: string;
 }

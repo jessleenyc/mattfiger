@@ -2,23 +2,45 @@
 import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'IDLE' | 'SENDING' | 'SUCCESS' | 'ERROR'>('IDLE');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus('SENDING');
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/maqddylo', {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus('SUCCESS');
+        form.reset();
+      } else {
+        setStatus('ERROR');
+      }
+    } catch (error) {
+      setStatus('ERROR');
+    }
   };
 
   return (
     <div className="px-6 py-20 max-w-4xl mx-auto text-center">
-      <h1 className="text-4xl tracking-tighter mb-12 text-black font-bold uppercase">GET IN TOUCH</h1>
+      <h1 className="text-4xl tracking-normal mb-12 text-black font-bold uppercase">GET IN TOUCH</h1>
 
-      {submitted ? (
+      {status === 'SUCCESS' ? (
         <div className="bg-neutral-50 p-12 animate-in zoom-in duration-500 border border-black/5">
           <h2 className="text-2xl font-bold mb-4 text-black">MESSAGE SENT</h2>
           <p className="text-black/50">THANK YOU FOR REACHING OUT, MATTHEW WILL GET BACK TO YOU SHORTLY.</p>
           <button
-            onClick={() => setSubmitted(false)}
+            onClick={() => setStatus('IDLE')}
             className="mt-8 text-[10px] uppercase tracking-widest hover:text-black transition underline text-black/50"
           >
             SEND ANOTHER
@@ -26,11 +48,17 @@ const Contact: React.FC = () => {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-12 text-left max-w-xl mx-auto">
+          {status === 'ERROR' && (
+            <div className="bg-red-50 text-red-500 p-4 text-sm font-bold uppercase tracking-widest mb-8 border border-red-100">
+              Something went wrong. Please try again or email directly.
+            </div>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-2">
               <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">Name</label>
               <input
                 required
+                name="name"
                 type="text"
                 className="w-full bg-transparent border-b border-black/10 py-4 focus:border-black focus:outline-none transition text-xl font-light text-black placeholder:text-black/10"
                 placeholder="YOUR NAME"
@@ -40,6 +68,7 @@ const Contact: React.FC = () => {
               <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">Email</label>
               <input
                 required
+                name="email"
                 type="email"
                 className="w-full bg-transparent border-b border-black/10 py-4 focus:border-black focus:outline-none transition text-xl font-light text-black placeholder:text-black/10"
                 placeholder="YOUR@EMAIL.COM"
@@ -51,6 +80,7 @@ const Contact: React.FC = () => {
             <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">Message</label>
             <textarea
               required
+              name="message"
               rows={4}
               className="w-full bg-transparent border-b border-black/10 py-4 focus:border-black focus:outline-none transition text-xl font-light resize-none text-black placeholder:text-black/10"
               placeholder="TELL ME ABOUT YOUR PROJECT"
@@ -59,9 +89,10 @@ const Contact: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full py-6 mt-12 bg-black text-white text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-neutral-800 transition-colors shadow-lg"
+            disabled={status === 'SENDING'}
+            className="w-full py-6 mt-12 bg-black text-white text-[11px] uppercase tracking-[0.4em] font-bold hover:bg-neutral-800 transition-colors shadow-lg disabled:bg-neutral-400 disabled:cursor-not-allowed"
           >
-            SEND MESSAGE
+            {status === 'SENDING' ? 'SENDING...' : 'SEND MESSAGE'}
           </button>
         </form>
       )}
