@@ -16,11 +16,11 @@ const About: React.FC = () => {
 
         <div>
           <div className="text-black/70 space-y-6 text-lg leading-relaxed font-light">
-            <p className="font-medium text-black">
-              MATTHEW FIGLER IS A CINEMATOGRAPHER LIVING IN NEW YORK AND WORKING WHEREVER THE WIND BLOWS.
+            <p>
+              <strong className="font-bold text-black">Matthew Figler is a cinematographer based in NYC and the Finger Lakes</strong>, specializing in human-centered storytelling across a wide range of production flavors.
             </p>
             <p>
-              HIS PHOTOGRAPHIC STYLE AIMS TO PRESENT STORIES IN THEIR MOST HONEST LIGHT—OR SHADOW.
+              From global brand campaigns to intimate documentaries, he brings a sensitive eye and a commitment to <strong className="font-bold text-black">capturing stories in their most honest light—or shadow.</strong>
             </p>
           </div>
 

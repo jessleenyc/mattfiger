@@ -6,7 +6,7 @@ import { getOptimizedImage } from '../imageUtils';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
 
   const project = CATEGORIES.flatMap(c => c.projects).find(p => p.id === id);
 
@@ -55,8 +55,32 @@ const ProjectDetail: React.FC = () => {
   };
 
   const finalVideoUrl = getEmbedUrl(project.videoUrl);
-
   const category = CATEGORIES.find(c => c.name === project.category);
+
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null && project.gallery) {
+      setSelectedIndex((selectedIndex + 1) % project.gallery.length);
+    }
+  };
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null && project.gallery) {
+      setSelectedIndex((selectedIndex - 1 + project.gallery.length) % project.gallery.length);
+    }
+  };
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'Escape') setSelectedIndex(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex, project.gallery]);
 
   return (
     <div className="px-6 py-12 max-w-6xl mx-auto">
@@ -71,7 +95,7 @@ const ProjectDetail: React.FC = () => {
       </div>
 
       {project.videoUrl && (
-        <div className="relative aspect-video w-[80%] mx-auto bg-neutral-100 mb-12 shadow-sm border border-black/5 overflow-hidden">
+        <div className="relative aspect-video w-full md:w-[80%] mx-auto bg-neutral-100 mb-12 shadow-sm border border-black/5 overflow-hidden">
           <iframe
             src={finalVideoUrl}
             title={project.title}
@@ -137,7 +161,7 @@ const ProjectDetail: React.FC = () => {
             {project.episodes.map((episode, index) => (
               <div key={index} className="space-y-6">
                 <h4 className="text-sm tracking-widest uppercase font-bold text-center">{episode.title}</h4>
-                <div className="relative aspect-video w-[80%] mx-auto bg-neutral-100 shadow-sm border border-black/5 overflow-hidden">
+                <div className="relative aspect-video w-full md:w-[80%] mx-auto bg-neutral-100 shadow-sm border border-black/5 overflow-hidden">
                   <iframe
                     src={getEmbedUrl(episode.videoUrl)}
                     title={episode.title}
@@ -163,7 +187,7 @@ const ProjectDetail: React.FC = () => {
                 key={index}
                 className="bg-neutral-100 overflow-hidden shadow-sm cursor-pointer group"
                 style={{ aspectRatio: project.galleryAspectRatio || project.aspectRatio || '16/9' }}
-                onClick={() => setSelectedImage(image)}
+                onClick={() => setSelectedIndex(index)}
               >
                 <img
                   src={getOptimizedImage(image, 600)}
@@ -177,22 +201,40 @@ const ProjectDetail: React.FC = () => {
       )}
 
       {/* Lightbox Overlay */}
-      {selectedImage && (
+      {selectedIndex !== null && project.gallery && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+          onClick={() => setSelectedIndex(null)}
         >
           <button
-            className="absolute top-6 right-6 text-white/50 hover:text-white transition"
-            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition z-[60]"
+            onClick={() => setSelectedIndex(null)}
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
-          <img
-            src={getOptimizedImage(selectedImage, 2000, 90)}
-            alt="Gallery view"
-            className="max-w-[69vw] max-h-[69vh] object-contain shadow-2xl"
-          />
+
+          {/* Navigation Arrows */}
+          <button
+            className="absolute left-6 text-white/30 hover:text-white transition z-[60] p-4"
+            onClick={handlePrev}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          </button>
+
+          <button
+            className="absolute right-6 text-white/30 hover:text-white transition z-[60] p-4"
+            onClick={handleNext}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          </button>
+
+          <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
+            <img
+              src={getOptimizedImage(project.gallery[selectedIndex], 2000, 90)}
+              alt="Gallery view"
+              className="max-w-[75vw] max-h-[75vh] object-contain shadow-2xl pointer-events-auto"
+            />
+          </div>
         </div>
       )}
     </div>

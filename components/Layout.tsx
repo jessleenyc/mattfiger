@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-10 text-[11px] font-semibold uppercase tracking-[0.25em]">
+        <div className="hidden md:flex items-center space-x-10 text-[12px] font-medium uppercase tracking-[0.15em]">
           {/* Work Dropdown */}
           <div
             className="relative h-20 flex items-center group"
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
             onMouseLeave={() => setIsWorkOpen(false)}
           >
             <button
-              className={`flex items-center hover:text-black transition gap-1 ${location.pathname === '/' || location.pathname.startsWith('/category') ? 'text-black' : 'text-black/40'}`}
+              className={`flex items-center hover:text-black transition gap-1 ${location.pathname === '/' || location.pathname.startsWith('/category') ? 'text-black' : 'text-black/60'}`}
               onClick={() => setIsWorkOpen(!isWorkOpen)}
             >
               WORK
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                   <Link
                     key={cat.id}
                     to={`/category/${cat.slug}`}
-                    className={`px-6 py-2.5 hover:bg-black/5 hover:text-black transition text-[10px] ${location.pathname === `/category/${cat.slug}` ? 'text-black bg-black/5' : 'text-black/40'}`}
+                    className={`px-6 py-2.5 hover:bg-black/5 hover:text-black transition text-[11px] ${location.pathname === `/category/${cat.slug}` ? 'text-black bg-black/5' : 'text-black/60'}`}
                   >
                     {cat.name}
                   </Link>
@@ -67,8 +67,8 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <Link to="/about" className={`hover:text-black transition ${location.pathname === '/about' ? 'text-black' : 'text-black/40'}`}>ABOUT</Link>
-          <Link to="/contact" className={`hover:text-black transition ${location.pathname === '/contact' ? 'text-black' : 'text-black/40'}`}>CONTACT</Link>
+          <Link to="/about" className={`hover:text-black transition ${location.pathname === '/about' ? 'text-black' : 'text-black/60'}`}>ABOUT</Link>
+          <Link to="/contact" className={`hover:text-black transition ${location.pathname === '/contact' ? 'text-black' : 'text-black/60'}`}>CONTACT</Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
           <div className="flex flex-col space-y-4">
             <button
               onClick={() => setIsMobileWorkOpen(!isMobileWorkOpen)}
-              className="text-3xl font-serif flex items-center justify-between w-full text-left text-black"
+              className="text-4xl font-bold flex items-center justify-between w-full text-left text-black tracking-tighter"
             >
               WORK
               <svg className={`w-6 h-6 transition-transform ${isMobileWorkOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,8 +106,8 @@ const Navbar: React.FC = () => {
             )}
           </div>
 
-          <Link to="/about" className="text-3xl font-serif text-black">ABOUT</Link>
-          <Link to="/contact" className="text-3xl font-serif text-black">CONTACT</Link>
+          <Link to="/about" className="text-4xl font-bold text-black tracking-tighter">ABOUT</Link>
+          <Link to="/contact" className="text-4xl font-bold text-black tracking-tighter">CONTACT</Link>
 
           <div className="pt-12 flex flex-wrap gap-6">
             <a href="https://www.instagram.com/matty_le_fig/?hl=en" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40">Instagram</a>
