@@ -312,6 +312,34 @@ export const CATEGORIES: Category[] = [
     ]
   },
   {
+    id: 'unit-work',
+    name: '2ND UNIT & OPERATOR WORK',
+    slug: 'contributions',
+    description: '',
+    featuredImage: 'Lizzo1.png',
+    isGalleryView: true,
+    customProjectCountText: 'VARIOUS PROJECTS',
+    galleryAspectRatio: '2/3',
+    projects: [
+      {
+        id: 'highlights',
+        title: 'HIGHLIGHTS',
+        description: '',
+        videoUrl: '',
+        thumbnail: 'bettylg.jpg',
+        category: '2ND UNIT & OPERATOR WORK',
+        gallery: [
+          'bettylg.jpg',
+          'bwb.jpg',
+          'hh.jpg',
+          'Lizzotour.jpg:cm-pad_resize,bg-F5F5F5,ar-2-3'
+        ],
+        aspectRatio: '16/9',
+        galleryAspectRatio: '2/3'
+      }
+    ]
+  },
+  {
     id: 'interview',
     name: 'INTERVIEW LOOKS',
     slug: 'interview-looks',
@@ -329,6 +357,30 @@ export const CATEGORIES: Category[] = [
         category: 'INTERVIEW LOOKS',
         gallery: [
           'truck.jpg', '4.png', 'Indust.jpg', '8.png', 'abbycu.jpg:h-flip', 'twoperson.jpg', '10.png', 'Nicolelens.jpg'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'commercial',
+    name: 'COMMERCIAL REEL',
+    slug: 'commercial',
+    description: '',
+    featuredImage: 'mountain.jpg',
+    comingSoon: true,
+    projects: [
+      {
+        id: 'patagonia',
+        title: 'PATAGONIA',
+        description: '',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        thumbnail: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1280&h=720&auto=format&fit=crop',
+        category: 'COMMERCIAL REEL',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1280&h=720&auto=format&fit=crop'
         ]
       }
     ]
@@ -385,58 +437,6 @@ export const CATEGORIES: Category[] = [
         gallery: [
           'Lizzo1.png'
         ]
-      }
-    ]
-  },
-  {
-    id: 'commercial',
-    name: 'COMMERCIAL REEL',
-    slug: 'commercial',
-    description: '',
-    featuredImage: 'mountain.jpg',
-    comingSoon: true,
-    projects: [
-      {
-        id: 'patagonia',
-        title: 'PATAGONIA',
-        description: '',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        thumbnail: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1280&h=720&auto=format&fit=crop',
-        category: 'COMMERCIAL REEL',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
-        gallery: [
-          'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1280&h=720&auto=format&fit=crop'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'unit-work',
-    name: '2ND UNIT & OPERATOR WORK',
-    slug: 'contributions',
-    description: '',
-    featuredImage: 'Lizzo1.png',
-    isGalleryView: true,
-    customProjectCountText: 'VARIOUS PROJECTS',
-    galleryAspectRatio: '2/3',
-    projects: [
-      {
-        id: 'highlights',
-        title: 'HIGHLIGHTS',
-        description: '',
-        videoUrl: '',
-        thumbnail: 'bettylg.jpg',
-        category: '2ND UNIT & OPERATOR WORK',
-        gallery: [
-          'bettylg.jpg',
-          'bwb.jpg',
-          'hh.jpg',
-          'Lizzotour.jpg:cm-pad_resize,bg-F5F5F5,ar-2-3'
-        ],
-        aspectRatio: '16/9',
-        galleryAspectRatio: '2/3'
       }
     ]
   },
