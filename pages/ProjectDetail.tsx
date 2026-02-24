@@ -71,6 +71,11 @@ const ProjectDetail: React.FC = () => {
     }
   };
 
+  // Scroll to top when project ID changes
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return;
@@ -91,11 +96,34 @@ const ProjectDetail: React.FC = () => {
 
       <div className="mb-12">
         <p className="text-black/30 uppercase tracking-[0.3em] text-[10px] mb-4">{project.category}</p>
-        <h1 className="text-4xl md:text-7xl tracking-normal mb-8 text-black leading-tight font-bold">{project.title}</h1>
+        <div className="flex items-center gap-6 mb-8 flex-nowrap whitespace-nowrap overflow-visible h-16 md:h-24">
+          <h1 className={`text-2xl md:text-3xl tracking-normal text-black leading-tight font-black shrink-0 ${project.logoBeforeTitle ? 'order-2' : 'order-1'}`}>{project.title}</h1>
+          {project.titleLogo && (
+            <div className={`flex items-center gap-2 shrink-0 ${project.logoBeforeTitle ? 'order-1' : 'order-2'}`}>
+              {(Array.isArray(project.titleLogo) ? project.titleLogo : [project.titleLogo]).map((logo, idx) => {
+                let heightClass = logo === 'Magnolia.png' ? 'h-14 md:h-20' : 'h-10 md:h-14';
+                if (logo === 'bsstream.png') heightClass = 'h-10 md:h-14';
+                if (logo === 'bsweb.png') heightClass = 'h-11 md:h-15';
+                if (logo === 'vice.png') heightClass = 'h-10 md:h-14';
+                // Pull Discovery closer to Magnolia
+                const spacingClass = (logo === 'DSC.png' || logo === 'Discovery.png') ? '-ml-2 md:-ml-4' : '';
+                return (
+                  <img
+                    key={idx}
+                    src={getOptimizedImage(logo, 400)}
+                    alt="Logo"
+                    className={`${heightClass} ${spacingClass} w-auto object-contain ${logo === 'Magnolia.png' ? 'relative top-0.5' : ''
+                      }`}
+                  />
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
 
       {project.videoUrl && (
-        <div className="relative aspect-video w-full md:w-[80%] mx-auto bg-neutral-100 mb-12 shadow-sm border border-black/5 overflow-hidden">
+        <div className="relative aspect-video w-full md:w-[80%] mx-auto mb-12 overflow-hidden">
           <iframe
             src={finalVideoUrl}
             title={project.title}
@@ -119,17 +147,26 @@ const ProjectDetail: React.FC = () => {
         </div>
 
         <div className="space-y-8 border-l border-black/5 pl-8 hidden md:block">
-          <div>
-            <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR</h3>
-            <p className="text-sm font-medium">{(project.director || 'Collaborative').toUpperCase()}</p>
-          </div>
-          <div>
-            <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">CINEMATOGRAPHY</h3>
-            <p className="text-sm font-medium">{(project.cinematographer || 'Matthew Figler').toUpperCase()}</p>
-          </div>
+          {project.director?.toUpperCase() === project.cinematographer?.toUpperCase() ? (
+            <div>
+              <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR / CINEMATOGRAPHER</h3>
+              <p className="text-sm font-medium">{(project.director || 'Matthew Figler').toUpperCase()}</p>
+            </div>
+          ) : (
+            <>
+              <div>
+                <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR</h3>
+                <p className="text-sm font-medium">{(project.director || 'Collaborative').toUpperCase()}</p>
+              </div>
+              <div>
+                <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">CINEMATOGRAPHER</h3>
+                <p className="text-sm font-medium">{(project.cinematographer || 'Matthew Figler').toUpperCase()}</p>
+              </div>
+            </>
+          )}
           {project.format && (
             <div>
-              <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">FORMAT</h3>
+              <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">TECHNICAL</h3>
               <p className="text-sm font-medium">{project.format.toUpperCase()}</p>
             </div>
           )}
@@ -137,17 +174,26 @@ const ProjectDetail: React.FC = () => {
 
         {/* Mobile alternative for project info */}
         <div className="md:hidden grid grid-cols-2 gap-8 border-t border-black/5 pt-8 col-span-1">
-          <div>
-            <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR</h3>
-            <p className="text-sm font-medium">{project.director || 'Collaborative'}</p>
-          </div>
-          <div>
-            <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">CINEMATOGRAPHY</h3>
-            <p className="text-sm font-medium">{project.cinematographer || 'Matthew Figler'}</p>
-          </div>
+          {project.director?.toUpperCase() === project.cinematographer?.toUpperCase() ? (
+            <div className="col-span-2">
+              <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR / CINEMATOGRAPHER</h3>
+              <p className="text-sm font-medium">{project.director || 'Matthew Figler'}</p>
+            </div>
+          ) : (
+            <>
+              <div>
+                <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR</h3>
+                <p className="text-sm font-medium">{project.director || 'Collaborative'}</p>
+              </div>
+              <div>
+                <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">CINEMATOGRAPHER</h3>
+                <p className="text-sm font-medium">{project.cinematographer || 'Matthew Figler'}</p>
+              </div>
+            </>
+          )}
           {project.format && (
             <div className="col-span-2">
-              <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">FORMAT</h3>
+              <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">TECHNICAL</h3>
               <p className="text-sm font-medium">{project.format.toUpperCase()}</p>
             </div>
           )}
@@ -161,7 +207,7 @@ const ProjectDetail: React.FC = () => {
             {project.episodes.map((episode, index) => (
               <div key={index} className="space-y-6">
                 <h4 className="text-sm tracking-widest uppercase font-bold text-center">{episode.title}</h4>
-                <div className="relative aspect-video w-full md:w-[80%] mx-auto bg-neutral-100 shadow-sm border border-black/5 overflow-hidden">
+                <div className="relative aspect-video w-full md:w-[80%] mx-auto overflow-hidden">
                   <iframe
                     src={getEmbedUrl(episode.videoUrl)}
                     title={episode.title}

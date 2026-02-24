@@ -15,6 +15,8 @@ export interface Project {
   episodes?: { title: string; videoUrl: string }[];
   aspectRatio?: string;
   galleryAspectRatio?: string;
+  titleLogo?: string | string[];
+  logoBeforeTitle?: boolean;
 }
 
 export interface Category {
