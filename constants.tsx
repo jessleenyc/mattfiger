@@ -241,6 +241,29 @@ export const CATEGORIES: Category[] = [
     ]
   },
   {
+    id: 'commercial',
+    name: 'COMMERCIAL REEL',
+    slug: 'commercial',
+    description: '',
+    featuredImage: 'mountain.jpg',
+    projects: [
+      {
+        id: 'commercial-reel',
+        title: 'COMMERCIAL REEL 2025',
+        description: 'Coming soon.',
+        videoUrl: '',
+        thumbnail: 'mountain.jpg',
+        category: 'COMMERCIAL REEL',
+        director: 'MATTHEW FIGLER',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'VARIOUS',
+        gallery: [
+          'mountain.jpg'
+        ]
+      }
+    ]
+  },
+  {
     id: 'music-video',
     name: 'MUSIC VIDEO',
     slug: 'music-video',
@@ -363,30 +386,6 @@ export const CATEGORIES: Category[] = [
         category: 'INTERVIEW LOOKS',
         gallery: [
           'truck.jpg', '4.png', 'Indust.jpg', 'Seamless.jpg', 'abbycu.jpg:h-flip', 'twoperson.jpg', '10.png', 'Nicolelens.jpg'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'commercial',
-    name: 'COMMERCIAL REEL',
-    slug: 'commercial',
-    description: '',
-    featuredImage: 'mountain.jpg',
-    comingSoon: true,
-    projects: [
-      {
-        id: 'patagonia',
-        title: 'PATAGONIA',
-        description: '',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        thumbnail: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1280&h=720&auto=format&fit=crop',
-        category: 'COMMERCIAL REEL',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
-        gallery: [
-          'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1280&h=720&auto=format&fit=crop'
         ]
       }
     ]
