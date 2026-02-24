@@ -122,8 +122,8 @@ const ProjectDetail: React.FC = () => {
         </div>
       </div>
 
-      {project.videoUrl && (
-        <div className="relative aspect-video w-full md:w-[80%] mx-auto mb-12 overflow-hidden">
+      {project.videoUrl ? (
+        <div className="relative aspect-video w-full md:w-[80%] mx-auto mb-12 overflow-hidden bg-neutral-100 shadow-2xl">
           <iframe
             src={finalVideoUrl}
             title={project.title}
@@ -133,6 +133,19 @@ const ProjectDetail: React.FC = () => {
             allowFullScreen
             loading="lazy"
           ></iframe>
+        </div>
+      ) : (
+        <div className="relative aspect-video w-full md:w-[80%] mx-auto mb-12 overflow-hidden bg-neutral-100 shadow-lg group/placeholder">
+          <img
+            src={getOptimizedImage(project.thumbnail, 1600)}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/5 group-hover/placeholder:bg-black/20 transition-colors">
+            <div className="bg-white/90 backdrop-blur-sm px-6 py-3 border border-black/5 shadow-xl">
+              <p className="text-[10px] uppercase tracking-[0.4em] font-black text-black">COMING SOON</p>
+            </div>
+          </div>
         </div>
       )}
 
