@@ -61,7 +61,6 @@ const Contact: React.FC = () => {
                 name="name"
                 type="text"
                 className="w-full bg-transparent border-b border-black/10 py-4 focus:border-black focus:outline-none transition text-xl font-light text-black placeholder:text-black/10"
-                placeholder="YOUR NAME"
               />
             </div>
             <div className="space-y-2">
@@ -71,7 +70,6 @@ const Contact: React.FC = () => {
                 name="email"
                 type="email"
                 className="w-full bg-transparent border-b border-black/10 py-4 focus:border-black focus:outline-none transition text-xl font-light text-black placeholder:text-black/10"
-                placeholder="YOUR@EMAIL.COM"
               />
             </div>
           </div>
@@ -83,7 +81,6 @@ const Contact: React.FC = () => {
               name="message"
               rows={4}
               className="w-full bg-transparent border-b border-black/10 py-4 focus:border-black focus:outline-none transition text-xl font-light resize-none text-black placeholder:text-black/10"
-              placeholder="TELL ME ABOUT YOUR PROJECT"
             ></textarea>
           </div>
 
