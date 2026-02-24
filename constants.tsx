@@ -254,7 +254,7 @@ export const CATEGORIES: Category[] = [
         videoUrl: '',
         thumbnail: 'mountain.jpg',
         category: 'COMMERCIAL REEL',
-        director: 'MATTHEW FIGLER',
+        director: 'VARIOUS',
         cinematographer: 'MATTHEW FIGLER',
         format: 'VARIOUS',
         gallery: [
