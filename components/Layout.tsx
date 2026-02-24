@@ -32,33 +32,34 @@ const Navbar: React.FC = () => {
           M.FIG
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-10 text-[12px] font-medium uppercase tracking-[0.15em]">
+        {/* Navigation Menu */}
+        <div className="flex items-center space-x-6 md:space-x-10 text-[10px] md:text-[12px] font-medium uppercase tracking-[0.2em]">
           {/* Work Dropdown */}
           <div
-            className="relative h-20 flex items-center group"
+            className="relative h-20 flex items-center"
             ref={dropdownRef}
-            onMouseEnter={() => setIsWorkOpen(true)}
-            onMouseLeave={() => setIsWorkOpen(false)}
+            onMouseEnter={() => window.innerWidth > 768 && setIsWorkOpen(true)}
+            onMouseLeave={() => window.innerWidth > 768 && setIsWorkOpen(false)}
           >
             <button
-              className={`flex items-center hover:text-black transition gap-1 ${location.pathname === '/' || location.pathname.startsWith('/category') ? 'text-black' : 'text-black/60'}`}
+              className={`flex items-center hover:text-black transition gap-1.5 ${location.pathname === '/' || location.pathname.startsWith('/category') ? 'text-black' : 'text-black/40'}`}
               onClick={() => setIsWorkOpen(!isWorkOpen)}
             >
               WORK
-              <svg className={`w-3 h-3 transition-transform duration-300 ${isWorkOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className={`w-2.5 h-2.5 transition-transform duration-300 ${isWorkOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
             {/* Subnav Dropdown */}
-            <div className={`absolute top-full left-0 w-64 bg-white border border-black/5 py-4 shadow-xl transition-all duration-300 transform ${isWorkOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-2 invisible'}`}>
+            <div className={`md:absolute fixed md:top-full top-20 md:left-0 left-4 md:right-auto right-4 md:w-64 w-auto bg-white border border-black/5 py-10 md:py-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] transition-all duration-300 transform ${isWorkOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-2 invisible'}`}>
               <div className="flex flex-col">
                 {CATEGORIES.map((cat) => (
                   <Link
                     key={cat.id}
                     to={`/category/${cat.slug}`}
-                    className={`px-6 py-2.5 hover:bg-black/5 hover:text-black transition text-[11px] ${location.pathname === `/category/${cat.slug}` ? 'text-black bg-black/5' : 'text-black/60'}`}
+                    className={`px-8 md:px-8 py-4 md:py-3 hover:bg-black/[0.02] hover:text-black transition text-[11px] md:text-[11px] font-bold tracking-[0.25em] ${location.pathname === `/category/${cat.slug}` ? 'text-black bg-black/[0.02]' : 'text-black/40'}`}
+                    onClick={() => setIsWorkOpen(false)}
                   >
                     {cat.name}
                   </Link>
@@ -67,55 +68,10 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <Link to="/about" className={`hover:text-black transition ${location.pathname === '/about' ? 'text-black' : 'text-black/60'}`}>ABOUT</Link>
-          <Link to="/contact" className={`hover:text-black transition ${location.pathname === '/contact' ? 'text-black' : 'text-black/60'}`}>CONTACT</Link>
+          <Link to="/about" className={`hover:text-black transition ${location.pathname === '/about' ? 'text-black' : 'text-black/40'}`}>ABOUT</Link>
+          <Link to="/contact" className={`hover:text-black transition ${location.pathname === '/contact' ? 'text-black' : 'text-black/40'}`}>CONTACT</Link>
         </div>
-
-        {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-black focus:outline-none p-2">
-          {isOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" /></svg>
-          )}
-        </button>
       </div>
-
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-white z-40 overflow-y-auto px-8 py-12 flex flex-col space-y-8">
-          <div className="flex flex-col space-y-4">
-            <button
-              onClick={() => setIsMobileWorkOpen(!isMobileWorkOpen)}
-              className="text-4xl font-bold flex items-center justify-between w-full text-left text-black tracking-tighter"
-            >
-              WORK
-              <svg className={`w-6 h-6 transition-transform ${isMobileWorkOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {isMobileWorkOpen && (
-              <div className="flex flex-col space-y-3 pl-4 border-l border-black/10 animate-in slide-in-from-left-2 duration-300">
-                {CATEGORIES.map((cat) => (
-                  <Link key={cat.id} to={`/category/${cat.slug}`} className="text-black/70 text-base py-1">
-                    {cat.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <Link to="/about" className="text-4xl font-bold text-black tracking-tighter">ABOUT</Link>
-          <Link to="/contact" className="text-4xl font-bold text-black tracking-tighter">CONTACT</Link>
-
-          <div className="pt-12 flex flex-wrap gap-6">
-            <a href="https://www.instagram.com/matty_le_fig/?hl=en" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40">Instagram</a>
-            <a href="https://vimeo.com/figxlee" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40">Vimeo</a>
-            <a href="https://entertheglen.tumblr.com/" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40">Tumblr</a>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };

@@ -72,7 +72,7 @@ const CategoryPage: React.FC = () => {
           </div>
         </div>
       ) : category.isGalleryView ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`grid grid-cols-2 md:grid-cols-3 ${category.slug === 'interview-looks' || category.slug === 'performance' ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-4 md:gap-6`}>
           {allImages.map((image, index) => (
             <div
               key={index}
@@ -89,7 +89,7 @@ const CategoryPage: React.FC = () => {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
           {category.projects.map((project) => (
             <Link
               key={project.id}
@@ -114,7 +114,36 @@ const CategoryPage: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-100 group-hover:opacity-90"
                 />
               </div>
-              <h3 className="text-2xl mb-2 text-black underline underline-offset-8 decoration-black/10 group-hover:decoration-black/30 transition-all font-bold tracking-normal">{project.title}</h3>
+              <div className={`flex items-center gap-4 mb-2 flex-nowrap whitespace-nowrap overflow-visible h-16 ${project.logoBeforeTitle ? 'pl-4' : ''}`}>
+                <h3 className={`text-base text-black underline underline-offset-8 decoration-black/10 group-hover:decoration-black/30 transition-all font-black tracking-normal shrink-0 ${project.logoBeforeTitle ? 'order-2' : 'order-1'}`}>{project.title}</h3>
+                {project.titleLogo && (
+                  <div className={`flex items-center gap-1.5 shrink-0 ${project.logoBeforeTitle ? 'order-1' : 'order-2'}`}>
+                    {(Array.isArray(project.titleLogo) ? project.titleLogo : [project.titleLogo]).map((logo, idx) => {
+                      let heightClass = 'h-8';
+                      if (logo === 'Magnolia.png') heightClass = 'h-12';
+                      else if (logo === 'PBS.png') heightClass = 'h-9';
+                      else if (logo === 'Abc.png') heightClass = 'h-10';
+                      else if (logo === 'DSC.png' || logo === 'Discovery.png' || logo === 'Discovery.jpeg') heightClass = 'h-8';
+                      else if (logo === 'Hbo.jpeg') heightClass = 'h-8';
+                      else if (logo === 'bsstream.png') heightClass = 'h-8';
+                      else if (logo === 'bsweb.png') heightClass = 'h-9';
+                      else if (logo === 'vice.png') heightClass = 'h-8';
+
+                      // Pull Discovery closer to Magnolia
+                      const spacingClass = (logo === 'DSC.png' || logo === 'Discovery.png') ? '-ml-2' : '';
+                      return (
+                        <img
+                          key={idx}
+                          src={getOptimizedImage(logo, 300)}
+                          alt="Logo"
+                          className={`${heightClass} ${spacingClass} w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity ${logo === 'Magnolia.png' ? 'relative top-0.5' : ''
+                            }`}
+                        />
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
               <p className="text-black/50 line-clamp-2 text-sm leading-relaxed uppercase">
                 {project.description}
               </p>
