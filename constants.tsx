@@ -16,9 +16,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/1165723713/921b31ee6f?fl=tl&fe=ec',
         thumbnail: 'chiamountains.jpg',
         category: 'SERIES',
-        director: 'Chiara Hollender',
+        director: 'CHIARA HOLLENDER',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Sony Burano, Aaton XTR, 7207 s16mm Film, Olympus Rehoused, Zeiss LWZ.2, Canon 200 f1.8',
+        format: 'SONY BURANO, AATON XTR, 7207 S16MM FILM, OLYMPUS REHOUSED, ZEISS LWZ.2, CANON 200 F1.8',
         titleLogo: 'PBS.png',
         gallery: [
           'chiamountains.jpg',
@@ -41,9 +41,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/1162257542/7122e57d0d?share=copy&fl=sv&fe=ci',
         thumbnail: 'TERRY.jpg',
         category: 'SERIES',
-        director: 'Drew Van Steenbergen',
+        director: 'DREW VAN STEENBERGEN',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Canon C300II, Zeiss LWZ.2, Angenieux Style',
+        format: 'CANON C300II, ZEISS LWZ.2, ANGENIEUX STYLE',
         titleLogo: 'Abc.png',
         gallery: [
           'AlOYT.jpg',
@@ -58,9 +58,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/910168325',
         thumbnail: 'flare.jpg',
         category: 'SERIES',
-        director: 'Rick Kaplan, Franco Losapio',
-        cinematographer: 'MATTHEW FIGLER (10 Episodes)',
-        format: 'Sony Venice, Angenieux Optimo, Zeiss Super Speeds',
+        director: 'RICK KAPLAN, FRANCO LOSAPIO',
+        cinematographer: 'MATTHEW FIGLER (10 EPISODES)',
+        format: 'SONY VENICE, ANGENIEUX OPTIMO, ZEISS SUPER SPEEDS',
         titleLogo: ['Magnolia.png', 'DSC.png', 'Hbo.jpeg'],
         gallery: [
           'flare.jpg',
@@ -74,9 +74,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/199911030?fl=pl&fe=sh',
         thumbnail: 'Primal.jpg',
         category: 'SERIES',
-        director: 'Drew Van Steenbergen',
+        director: 'DREW VAN STEENBERGEN',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Canon C300II, Angenieux DP',
+        format: 'CANON C300II, ANGENIEUX DP',
         titleLogo: ['bsweb.png'],
         gallery: [
           'Primal.jpg'
@@ -106,9 +106,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/1133489984',
         thumbnail: 'buffalo.JPG',
         category: 'DOCUMENTARY',
-        director: 'Chiara Hollender',
+        director: 'CHIARA HOLLENDER',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Sony Burano, Zeiss Super Speeds',
+        format: 'SONY BURANO, ZEISS SUPER SPEEDS',
         gallery: [
           'lcportrait.jpg',
           'buffalo.JPG',
@@ -122,9 +122,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/686764376/4a6dcb9177?share=copy&fl=sv&fe=ci',
         thumbnail: 'tle.JPG',
         category: 'DOCUMENTARY',
-        director: 'Corbett Jones',
-        cinematographer: 'MATTHEW FIGLER AND Evan Prince',
-        format: 'Arri Amira, Canon C300, VHS, 8mm Film',
+        director: 'CORBETT JONES',
+        cinematographer: 'MATTHEW FIGLER AND EVAN PRINCE',
+        format: 'ARRI AMIRA, CANON C300, VHS, 8MM FILM',
         gallery: [
           'jail.jpg',
           'tle.JPG',
@@ -138,9 +138,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://www.youtube.com/watch?v=TNvDtuXAJdk',
         thumbnail: 'tents.jpg',
         category: 'DOCUMENTARY',
-        director: 'Dori Oskowitz',
-        cinematographer: 'Jackson Hunt and MATTHEW FIGLER',
-        format: 'RED, Zeiss ZF',
+        director: 'DORI OSKOWITZ',
+        cinematographer: 'JACKSON HUNT AND MATTHEW FIGLER',
+        format: 'RED, ZEISS ZF',
         titleLogo: 'vice.png',
         logoBeforeTitle: true,
         gallery: [
@@ -165,7 +165,7 @@ export const CATEGORIES: Category[] = [
         category: 'FILMS',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Krasnogorsk K3 PL, 7207 s16mm Film, Zeiss Super Speeds',
+        format: 'KRASNOGORSK K3 PL, 7207 S16MM FILM, ZEISS SUPER SPEEDS',
         gallery: [
           'chair.jpg',
           'spin2.jpg',
@@ -179,9 +179,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/311803261?share=copy&fl=sv&fe=ci',
         thumbnail: 'yaz0.jpg',
         category: 'FILMS',
-        director: 'Matthew Figler',
-        cinematographer: 'Travis Tips AND Matthew Figler',
-        format: '4perf 35mm 5207',
+        director: 'MATTHEW FIGLER',
+        cinematographer: 'TRAVIS TIPS AND MATTHEW FIGLER',
+        format: '4PERF 35MM 5207',
         gallery: [
           'skate0.jpg',
           'walk0.jpg',
@@ -195,9 +195,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/157471897',
         thumbnail: 'qmburritovimeo.jpg',
         category: 'FILMS',
-        director: 'Drew Van Steenbergen',
+        director: 'DREW VAN STEENBERGEN',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'RED, Zeiss LWZ.2, Angenieux Optimo',
+        format: 'RED, ZEISS LWZ.2, ANGENIEUX OPTIMO',
         gallery: [
           'qmburrito.jpg',
           'emily.jpg',
@@ -213,9 +213,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/143180353/df459ec313?fl=pl&fe=sh',
         thumbnail: 'dad.jpg',
         category: 'FILMS',
-        director: 'Drew Van Steenbergen',
+        director: 'DREW VAN STEENBERGEN',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'RED, Zeiss Super Speeds',
+        format: 'RED, ZEISS SUPER SPEEDS',
         gallery: [
           'Family.jpg',
           'trains.jpg',
@@ -231,9 +231,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/136354421',
         thumbnail: 'awpvimeo.png',
         category: 'FILMS',
-        director: 'Drew Van Steenbergen',
+        director: 'DREW VAN STEENBERGEN',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Arri Alexa, Zeiss Super Speeds',
+        format: 'ARRI ALEXA, ZEISS SUPER SPEEDS',
         gallery: [
           'awpvimeo.png'
         ]
@@ -250,7 +250,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'commercial-reel',
         title: 'COMMERCIAL REEL 2025',
-        description: 'Coming soon.',
+        description: 'COMING SOON.',
         videoUrl: '',
         thumbnail: 'mountain.jpg',
         category: 'COMMERCIAL REEL',
@@ -279,7 +279,7 @@ export const CATEGORIES: Category[] = [
         category: 'MUSIC VIDEO',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Krasnogorsk K3 PL, 7207 s16mm Film, Zeiss Super Speeds',
+        format: 'KRASNOGORSK K3 PL, 7207 S16MM FILM, ZEISS SUPER SPEEDS',
         gallery: [
           'Mirror.jpg',
           'Cab.jpg',
@@ -293,9 +293,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://www.youtube.com/watch?v=03L60WXhURA',
         thumbnail: 'DAN.jpg',
         category: 'MUSIC VIDEO',
-        director: 'John Appel',
+        director: 'JOHN APPEL',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'ARRI 235, 4perf 5207 35mm',
+        format: 'ARRI 235, 4PERF 5207 35MM',
         gallery: [
           'DAN.jpg',
           'ACRO.jpg',
@@ -313,7 +313,7 @@ export const CATEGORIES: Category[] = [
         category: 'MUSIC VIDEO',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Krasnogorsk K3, 7207 s16mm Film, Pentax, 1.33x Anamorphic',
+        format: 'KRASNOGORSK K3, 7207 S16MM FILM, PENTAX, 1.33X ANAMORPHIC',
         gallery: [
           'sun.jpg',
           'water.jpg',
@@ -331,7 +331,7 @@ export const CATEGORIES: Category[] = [
         category: 'MUSIC VIDEO',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'Arriflex 416, Krasnogorsk K3, 7207, 7265, s16mm Film, Black Magic Pocket',
+        format: 'ARRIFLEX 416, KRASNOGORSK K3, 7207, 7265, S16MM FILM, BLACK MAGIC POCKET',
         gallery: [
           'team.JPG',
           'down.jpg',
@@ -461,7 +461,7 @@ export const CATEGORIES: Category[] = [
         category: 'EXPERIMENTS',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: '3perf 5219 35mm, Cooke 2x Anamorphic',
+        format: '3PERF 5219 35MM, COOKE 2X ANAMORPHIC',
         gallery: [
           'Wide2x.jpg',
           'Norm.jpg'
@@ -478,7 +478,7 @@ export const CATEGORIES: Category[] = [
         category: 'EXPERIMENTS',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: '4perf 5207 35mm',
+        format: '4PERF 5207 35MM',
         gallery: [
           'Wide.jpg'
         ],
@@ -494,7 +494,7 @@ export const CATEGORIES: Category[] = [
         category: 'EXPERIMENTS',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: 'ARRI 235, 2perf 5207 35mm, Zeiss Super Speed 18mm',
+        format: 'ARRI 235, 2PERF 5207 35MM, ZEISS SUPER SPEED 18MM',
         gallery: [
           'jorge.jpg',
           'fam.jpg',
@@ -510,9 +510,9 @@ export const CATEGORIES: Category[] = [
         videoUrl: 'https://vimeo.com/1164111497?share=copy&fl=sv&fe=ci',
         thumbnail: 'Laowa.gif',
         category: 'EXPERIMENTS',
-        director: 'MATTHEW FIGLER AND Rick Dziedzic',
-        cinematographer: 'MATTHEW FIGLER AND Rick Dziedzic',
-        format: 'SONY BURANO, LAOWA 12mm Zero-D Uncoated Optics',
+        director: 'MATTHEW FIGLER AND RICK DZIEDZIC',
+        cinematographer: 'MATTHEW FIGLER AND RICK DZIEDZIC',
+        format: 'SONY BURANO, LAOWA 12MM ZERO-D UNCOATED OPTICS',
         gallery: [
           '12flare.jpg'
         ],
@@ -528,7 +528,7 @@ export const CATEGORIES: Category[] = [
         category: 'EXPERIMENTS',
         director: 'MATTHEW FIGLER',
         cinematographer: 'MATTHEW FIGLER',
-        format: '4perf 5207 35mm, Pushed +2 Stops',
+        format: '4PERF 5207 35MM, PUSHED +2 STOPS',
         gallery: [
           'Push.jpg'
         ],

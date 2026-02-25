@@ -10,7 +10,7 @@ const CategoryPage: React.FC = () => {
   const category = CATEGORIES.find(c => c.slug === slug);
 
   if (!category) {
-    return <div className="h-screen flex items-center justify-center text-black">Category not found</div>;
+    return <div className="h-screen flex items-center justify-center text-black font-bold tracking-widest uppercase">CATEGORY NOT FOUND</div>;
   }
 
   // Collect all images if it's a gallery view (thumbnails + any gallery images)
@@ -66,8 +66,8 @@ const CategoryPage: React.FC = () => {
           <div className="max-w-2xl space-y-6">
             <h2 className="text-2xl mb-2 text-black font-bold tracking-normal">COMING SOON</h2>
             <p className="text-black/50 text-sm leading-relaxed uppercase">
-              The {category.name.toLowerCase()} section is currently in production and will be available soon.
-              Check back for updates.
+              THE {category.name.toUpperCase()} SECTION IS CURRENTLY IN PRODUCTION AND WILL BE AVAILABLE SOON.
+              CHECK BACK FOR UPDATES.
             </p>
           </div>
         </div>

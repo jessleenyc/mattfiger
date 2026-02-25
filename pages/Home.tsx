@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   return (
     <div className="px-4 py-8 md:px-6 md:py-12 max-w-[1600px] mx-auto">
       <div className="mb-16 text-left">
-        <h1 className="text-3xl mb-2 tracking-normal text-black uppercase font-bold">cinematography & image craft</h1>
+        <h1 className="text-3xl mb-2 tracking-normal text-black uppercase font-bold">CINEMATOGRAPHY & IMAGE CRAFT</h1>
         <p className="text-black/40 uppercase tracking-[0.3em] text-[10px] font-bold">
           A COLLECTION OF NARRATIVE, NON-FICTION, AND FILM WORKS.
         </p>

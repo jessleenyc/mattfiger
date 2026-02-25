@@ -50,12 +50,12 @@ const Contact: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-12 text-left max-w-xl mx-auto">
           {status === 'ERROR' && (
             <div className="bg-red-50 text-red-500 p-4 text-sm font-bold uppercase tracking-widest mb-8 border border-red-100">
-              Something went wrong. Please try again or email directly.
+              SOMETHING WENT WRONG. PLEASE TRY AGAIN OR EMAIL DIRECTLY.
             </div>
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">Name</label>
+              <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">NAME</label>
               <input
                 required
                 name="name"
@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">Email</label>
+              <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">EMAIL</label>
               <input
                 required
                 name="email"
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">Message</label>
+            <label className="text-[10px] uppercase tracking-widest text-black/30 ml-1 font-bold">MESSAGE</label>
             <textarea
               required
               name="message"
@@ -96,11 +96,11 @@ const Contact: React.FC = () => {
 
       <div className="mt-20 flex flex-col items-center space-y-4">
         <p className="text-black/20 uppercase tracking-[0.3em] text-[10px] font-bold">DIRECT</p>
-        <a href="mailto:mattfigler@gmail.com" className="text-2xl hover:text-black/50 transition font-bold">mattfigler@gmail.com</a>
+        <a href="mailto:mattfigler@gmail.com" className="text-2xl hover:text-black/50 transition font-bold">MATTFIGLER@GMAIL.COM</a>
         <div className="flex space-x-8 pt-10">
-          <a href="https://www.instagram.com/matty_le_fig/?hl=en" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition font-bold">Instagram</a>
-          <a href="https://vimeo.com/figxlee" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition font-bold">Vimeo</a>
-          <a href="https://entertheglen.tumblr.com/" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition font-bold">Tumblr</a>
+          <a href="https://www.instagram.com/matty_le_fig/?hl=en" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition font-bold">INSTAGRAM</a>
+          <a href="https://vimeo.com/figxlee" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition font-bold">VIMEO</a>
+          <a href="https://entertheglen.tumblr.com/" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition font-bold">TUMBLR</a>
         </div>
       </div>
     </div>

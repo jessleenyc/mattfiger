@@ -190,17 +190,17 @@ const ProjectDetail: React.FC = () => {
           {project.director?.toUpperCase() === project.cinematographer?.toUpperCase() ? (
             <div className="col-span-2">
               <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR / CINEMATOGRAPHER</h3>
-              <p className="text-sm font-medium">{project.director || 'Matthew Figler'}</p>
+              <p className="text-sm font-medium">{(project.director || 'MATTHEW FIGLER').toUpperCase()}</p>
             </div>
           ) : (
             <>
               <div>
                 <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">DIRECTOR</h3>
-                <p className="text-sm font-medium">{project.director || 'Collaborative'}</p>
+                <p className="text-sm font-medium">{(project.director || 'COLLABORATIVE').toUpperCase()}</p>
               </div>
               <div>
                 <h3 className="text-[10px] uppercase tracking-widest text-black/30 mb-2 font-bold">CINEMATOGRAPHER</h3>
-                <p className="text-sm font-medium">{project.cinematographer || 'Matthew Figler'}</p>
+                <p className="text-sm font-medium">{(project.cinematographer || 'MATTHEW FIGLER').toUpperCase()}</p>
               </div>
             </>
           )}
