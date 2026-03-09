@@ -17,10 +17,10 @@ const CategoryCard: React.FC<{ category: any }> = ({ category }) => {
     // Pick a random starting image on refresh
     setImgIndex(Math.floor(Math.random() * gallery.length));
 
-    // Cycle every 4 minutes (240,000 ms)
+    // Cycle every 10 seconds (10,000 ms)
     const interval = setInterval(() => {
       setImgIndex((prev) => (prev + 1) % gallery.length);
-    }, 240000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [isInterview, gallery.length]);
