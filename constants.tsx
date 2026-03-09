@@ -385,7 +385,7 @@ export const CATEGORIES: Category[] = [
         thumbnail: 'T+Day.jpg',
         category: 'INTERVIEW LOOKS',
         gallery: [
-          'truck.jpg', '4.png', 'Indust.jpg', 'Seamless.jpg', 'abbycu.jpg:h-flip', 'twoperson.jpg', '10.png', 'Nicolelens.jpg'
+          'truck.jpg', '4.png', 'Indust.jpg', 'Seamless.jpg', 'abbycu.jpg:h-flip', 'twoperson.jpg', '10.png', 'Nicolelens.jpg', 'WR2.jpg'
         ]
       }
     ]
