@@ -144,9 +144,7 @@ const CategoryPage: React.FC = () => {
                   </div>
                 )}
               </div>
-              <p className="text-black/50 line-clamp-2 text-sm leading-relaxed uppercase">
-                {project.description}
-              </p>
+
             </Link>
           ))}
         </div>

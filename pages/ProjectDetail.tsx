@@ -152,9 +152,21 @@ const ProjectDetail: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
         <div className="md:col-span-2">
           <h2 className="text-[10px] uppercase tracking-widest text-black/30 mb-6 font-bold">ABOUT THE PROJECT</h2>
-          <div className="text-black/70 text-lg leading-relaxed space-y-6 font-light">
-            {project.description.split('\n').filter(p => p.trim() !== '').map((para, i) => (
-              <p key={i}>{para.trim()}</p>
+          <div className="text-black/70 text-lg leading-relaxed space-y-8 font-light">
+            {project.description.split('\n\n').filter(p => p.trim() !== '').map((para, i) => (
+              <p key={i}>
+                {para.split('\n').map((line, lineIdx) => (
+                  <React.Fragment key={lineIdx}>
+                    {lineIdx > 0 && <br />}
+                    {line.split(/(\*\*.*?\*\*)/).map((part, partIdx) => {
+                      if (part.startsWith('**') && part.endsWith('**')) {
+                        return <strong key={partIdx} className="font-black text-black">{part.slice(2, -2)}</strong>;
+                      }
+                      return part;
+                    })}
+                  </React.Fragment>
+                ))}
+              </p>
             ))}
           </div>
         </div>

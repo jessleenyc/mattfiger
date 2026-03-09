@@ -12,7 +12,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'women-of-the-earth',
         title: 'WOMEN OF THE EARTH',
-        description: '',
+        description: '**12 Episodes**\n\nA documentary series celebrating women who steward the land and cultivate climate solutions across the nation. Filmed in Montana, California, Maine, New York, Vermont, New Jersey, Texas, Arizona, and Oregon.',
         videoUrl: 'https://vimeo.com/1165723713/921b31ee6f?fl=tl&fe=ec',
         thumbnail: 'chiamountains.jpg',
         category: 'SERIES',
@@ -37,7 +37,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'a-little-of-your-time',
         title: 'A LITTLE OF YOUR TIME',
-        description: '',
+        description: '**11 Episodes**\n\nA docu-comedy show in which host Quinn Marcus subjects comedians and entertainers to the whims of her ‘normal’ routine. Featuring Adam Pally, Terry Crews, Maria Bamford, Moby, Casey Wilson, Ben Schwartz, Andy Milonakis, Lamorne Morris, Jon Gabrus, Isaiah Mustafa, and June Diane Raphael.',
         videoUrl: 'https://vimeo.com/1162257542/7122e57d0d?share=copy&fl=sv&fe=ci',
         thumbnail: 'TERRY.jpg',
         category: 'SERIES',
@@ -54,12 +54,12 @@ export const CATEGORIES: Category[] = [
       {
         id: 'barnwood-builders',
         title: 'BARNWOOD BUILDERS',
-        description: '',
+        description: '**15+ Episodes**\n\nFilmed across the southern and midwestern United States, this docu-series captures the grit and grace of Appalachian craftsmen as they breathe new life into 18th and 19th-century log cabins. It is an exploration of American history, an intimate character study, and the true meaning of sweat equity.',
         videoUrl: 'https://vimeo.com/910168325',
         thumbnail: 'flare.jpg',
         category: 'SERIES',
-        director: 'RICK KAPLAN, FRANCO LOSAPIO',
-        cinematographer: 'MATTHEW FIGLER (10 EPISODES)',
+        director: 'RICK KAPLAN, MATTHEW BENNETT, FRANCO LOSAPIO',
+        cinematographer: 'MATTHEW FIGLER (15+ EPISODES)',
         format: 'SONY VENICE, ANGENIEUX OPTIMO, ZEISS SUPER SPEEDS',
         titleLogo: ['Magnolia.png', 'DSC.png', 'Hbo.jpeg'],
         gallery: [
@@ -70,7 +70,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'brooklyn-sound',
         title: 'BROOKLYN SOUND',
-        description: '',
+        description: '**6 Episodes**\n\nThis musical mocku-series follows Lucy, the second-generation owner of Brooklyn Sound, and Joel, the studio\'s head engineer, as they try to save their legendary recording studio and keep their struggling business afloat.\n\n**Webby Award Nominee // Best Comedy: Longform or Series**\n**Best Indie Series // Streamy Awards**\n**Comedy Central Development Deal // New York Television Festival**\n**Tubefilters Top Five Indie Series**',
         videoUrl: 'https://vimeo.com/199911030?fl=pl&fe=sh',
         thumbnail: 'Primal.jpg',
         category: 'SERIES',
@@ -102,7 +102,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'earthrise',
         title: 'EARTHRISE X OXFAM',
-        description: '',
+        description: 'Once nearly extinct across Turtle Island, the buffalo are sacred teachers to the Lipan Apache. Today, Lucille and the women of her community are restoring these herds to their ancestral lands—reviving traditions of leadership, reciprocity, and resilience.',
         videoUrl: 'https://vimeo.com/1133489984',
         thumbnail: 'buffalo.JPG',
         category: 'DOCUMENTARY',
@@ -118,7 +118,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'all-you-need',
         title: 'ALL WE NEED IS ANOTHER CHANCE',
-        description: '',
+        description: 'After cutting a hit record behind bars at an infamous maximum-security prison, a young man becomes a beacon of hope and a legend among inmates.',
         videoUrl: 'https://vimeo.com/686764376/4a6dcb9177?share=copy&fl=sv&fe=ci',
         thumbnail: 'tle.JPG',
         category: 'DOCUMENTARY',
@@ -134,7 +134,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'blackout',
         title: 'BLACKOUT',
-        description: '',
+        description: 'Blackout is a 30-minute original THUMP movie that follows the dramatic highs and lows of partiers all over the world. It is an unadulterated and visceral tale of life from the pre-party to the after-hours. Filmed in Berlin, Santiago, Tokyo, Cancun, Paris, Brooklyn and Detroit.',
         videoUrl: 'https://www.youtube.com/watch?v=TNvDtuXAJdk',
         thumbnail: 'tents.jpg',
         category: 'DOCUMENTARY',
@@ -159,7 +159,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'calliope',
         title: 'CALLIOPE',
-        description: '',
+        description: 'A kid-sized cinematic memoir.',
         videoUrl: 'https://vimeo.com/824537742',
         thumbnail: 'chair.jpg',
         category: 'FILMS',
@@ -175,7 +175,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'sling',
         title: '{SLING}',
-        description: '',
+        description: 'New York City skate rats discover a magical slingshot and use it to warp reality. “{Sling}” is a playful variation on a skate video, elevated by low-key but convincing special effects and natural performances from its two leads.\n\n**Official Premiere // NoBudge**',
         videoUrl: 'https://vimeo.com/311803261?share=copy&fl=sv&fe=ci',
         thumbnail: 'yaz0.jpg',
         category: 'FILMS',
@@ -191,7 +191,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'a-lack-of-dating-in-brooklyn',
         title: 'A LACK OF DATING IN BROOKLYN',
-        description: '',
+        description: 'An unromantic comedy. Languishing in an unfulfilling quasi-relationship, Sam begins to have a horrifying realization: her romantic discontent is due to her own laziness and not, as she had previously assumed, the fault of every other human being on the planet.\n\n**Official Selection // NewFest**\n**Official Selection // Lower East Side Film Festival**\n**Official Selection // Short-of-the-Week**\n**Vimeo Staff Pick**',
         videoUrl: 'https://vimeo.com/157471897',
         thumbnail: 'qmburritovimeo.jpg',
         category: 'FILMS',
@@ -209,7 +209,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'subpar',
         title: 'SUBPAR',
-        description: '',
+        description: 'Austyn is a superhero in her mid-twenties. Aside from dealing with villains and helping the city avert disaster, Austyn\'s problems aren\'t all that unique. She\'s not very close with her family, has no idea how to date, and wonders why people don\'t appreciate her more. Despite her remarkable power, Austyn can\'t help but feel subpar.',
         videoUrl: 'https://vimeo.com/143180353/df459ec313?fl=pl&fe=sh',
         thumbnail: 'dad.jpg',
         category: 'FILMS',
@@ -227,7 +227,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'alone-with-people',
         title: 'ALONE WITH PEOPLE',
-        description: '',
+        description: 'Growing up gay in the South, a high school girl seeks the help of a therapist to come out to her family and friends in this hilarious and touching coming-of-gay story.\n\n**Audience Award // Best Dramatic Short Film // OutFest LA**\n**Audience Award // Best Women\'s Short Film // Out on Film, Georgia**\n**Audience Award // Best Short Film // ImageOut: Rochester LGBT Film Festival**\n**Best Alumni Short Film // Emerson LA Film Festival**\n**Jury Award // Best Short Film // Out Film Connecticut**\n**Vimeo Staff Pick**',
         videoUrl: 'https://vimeo.com/136354421',
         thumbnail: 'awpvimeo.png',
         category: 'FILMS',
@@ -347,7 +347,7 @@ export const CATEGORIES: Category[] = [
     description: '',
     featuredImage: 'Lizzo1.png',
     isGalleryView: true,
-    customProjectCountText: 'VARIOUS PROJECTS',
+    customProjectCountText: 'SELECTED PROJECTS',
     galleryAspectRatio: '2/3',
     projects: [
       {
@@ -373,9 +373,9 @@ export const CATEGORIES: Category[] = [
     name: 'INTERVIEW LOOKS',
     slug: 'interview-looks',
     description: '',
-    featuredImage: 'T+Day.jpg',
+    featuredImage: 'Indust.jpg',
     isGalleryView: true,
-    customProjectCountText: 'VARIOUS PROJECTS',
+    customProjectCountText: 'SELECTED PROJECTS',
     projects: [
       {
         id: 'highlights',
@@ -385,7 +385,7 @@ export const CATEGORIES: Category[] = [
         thumbnail: 'T+Day.jpg',
         category: 'INTERVIEW LOOKS',
         gallery: [
-          'truck.jpg', '4.png', 'Indust.jpg', 'Seamless.jpg', 'abbycu.jpg:h-flip', 'twoperson.jpg', '10.png', 'Nicolelens.jpg'
+          'truck.jpg', '4.png', 'Indust.jpg', 'Seamless.jpg', 'abbycu.jpg:h-flip', 'WR2.jpg', 'Nicolelens.jpg', 'twoperson.jpg'
         ]
       }
     ]
@@ -395,10 +395,24 @@ export const CATEGORIES: Category[] = [
     name: 'PERFORMANCE',
     slug: 'performance',
     description: '',
-    featuredImage: 'Phil_LowAngle.jpg',
+    featuredImage: 'T+Day.jpg',
     isGalleryView: true,
-    customProjectCountText: 'VARIOUS PROJECTS',
+    customProjectCountText: 'SELECTED PROJECTS',
     projects: [
+      {
+        id: 'lizzo',
+        title: 'LIZZO',
+        description: '',
+        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        thumbnail: 'Lizzo1.png',
+        category: 'PERFORMANCE',
+        director: 'TBD',
+        cinematographer: 'MATTHEW FIGLER',
+        format: 'TBD',
+        gallery: [
+          'Lizzo1.png'
+        ]
+      },
       {
         id: 'loren-allred',
         title: 'LOREN ALLRED',
@@ -412,6 +426,7 @@ export const CATEGORIES: Category[] = [
         gallery: [
           'LA.jpg',
           'LA2.jpg',
+          'T+Day.jpg',
           'Phil_LowAngle.jpg'
         ]
       },
@@ -428,20 +443,6 @@ export const CATEGORIES: Category[] = [
         gallery: [
           'Bass_Med.jpg'
         ]
-      },
-      {
-        id: 'lizzo',
-        title: 'LIZZO',
-        description: '',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        thumbnail: 'Lizzo1.png',
-        category: 'PERFORMANCE',
-        director: 'TBD',
-        cinematographer: 'MATTHEW FIGLER',
-        format: 'TBD',
-        gallery: [
-          'Lizzo1.png'
-        ]
       }
     ]
   },
@@ -455,7 +456,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'film-test',
         title: 'WIDE TO SCOPE 35MM TEST',
-        description: '',
+        description: 'Testing transition from 16:9 to ultra-wide anamorphic on 35mm film. Test also includes a speed ramp from 24fps to 75fps.',
         videoUrl: 'https://vimeo.com/1163780871?share=copy&fl=sv&fe=ci',
         thumbnail: 'Wide2x.jpg',
         category: 'EXPERIMENTS',
@@ -472,7 +473,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'red-scale',
         title: 'EMULSION OUT 35MM TEST',
-        description: '',
+        description: 'Testing 4perf 35mm film shot through the backing rather than through the emulsion side.',
         videoUrl: 'https://vimeo.com/1162256499/ff5bdf0601?share=copy&fl=sv&fe=ci',
         thumbnail: 'Wide.jpg',
         category: 'EXPERIMENTS',
@@ -488,7 +489,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'party-ppl',
         title: '2 PERF PHOTO BOOTH',
-        description: '',
+        description: 'Triggering a film camera at 8 frames per second.',
         videoUrl: 'https://vimeo.com/352983473?share=copy&fl=sv&fe=ci',
         thumbnail: 'fam.jpg',
         category: 'EXPERIMENTS',
@@ -506,7 +507,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'lens-test',
         title: 'UNCOATED 12MM LENS TEST',
-        description: '',
+        description: 'Testing flare and halation characteristics of a modern ultrawide lens that has been uncoated.',
         videoUrl: 'https://vimeo.com/1164111497?share=copy&fl=sv&fe=ci',
         thumbnail: 'Laowa.gif',
         category: 'EXPERIMENTS',
@@ -522,7 +523,7 @@ export const CATEGORIES: Category[] = [
       {
         id: 'push-process',
         title: '2 STOP PUSH PROCESS',
-        description: '',
+        description: 'Daylight 35mm film pushed two stops under available sodium vapor light.',
         videoUrl: 'https://vimeo.com/284443250?share=copy&fl=sv&fe=ci',
         thumbnail: 'Push.jpg',
         category: 'EXPERIMENTS',
